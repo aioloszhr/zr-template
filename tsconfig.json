@@ -1,7 +1,34 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "newLine": "LF",
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM", "es5", "es6", "dom.iterable", "es2022"],
+    "skipLibCheck": true,
+    "jsxImportSource": "vue",
+    "baseUrl": "./",
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"],
+      "@api": ["src/api"],
+      "@api/*": ["src/api/*"],
+      "@images": ["src/assets/images"],
+      "@images/*": ["src/assets/images"],
+      "@mock/*": ["mock/*"],
+      "@mock": ["mock/*"]
+    },
+  },
+  "include": [
+    "vite.config.ts",
+    "vite-env.d.ts",
+    "src/**/*",
   ]
 }
