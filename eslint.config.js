@@ -16,6 +16,9 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  {
+    '@typescript-eslint/no-unsafe-function-type': 'off'
+  },
   ...pluginVue.configs['flat/essential'],
   // 自定义规则
   {

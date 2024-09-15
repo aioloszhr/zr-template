@@ -1,0 +1,33 @@
+.zr-icon {
+  position: relative;
+  width: var(--zr-icon-width);
+  height: var(--zr-icon-height);
+  border: none;
+  outline: none;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--zr-icon-color);
+  transform: translateZ(0);
+  opacity: var(--zr-icon-depth);
+  cursor: var(--zr-icon-cursor);
+
+  & svg[ZrIconAttribute='zr-icon'] {
+    width: var(--zr-icon-width);
+    height: var(--zr-icon-height);
+    fill: currentColor;
+  }
+}
+
+.zr-icon-path__animate {
+  stroke-dasharray: var(--zr-icon-path-length);
+  stroke-dashoffset: var(--zr-icon-path-length);
+  animation: zrIconPathAnimate 2s forwards;
+}
+
+@keyframes zrIconPathAnimate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
-import './style.css'
+import 'virtual:svg-icons-register' // vite-plugin-svg-icons 脚本，启用 svg 雪碧图
+import '@/styles/base.scss' // 初始化一些基础样式
 import App from './App'
 import { setupRouter } from './router'
 

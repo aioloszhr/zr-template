@@ -1,5 +1,22 @@
+$positionX: 24px;
+$positionY: 24px;
+
 .login {
   width: 100%;
   display: flex;
   overflow: hidden;
+  .login-wrapper {
+    position: relative;
+    flex: auto;
+    .login-title__wrapper {
+      position: absolute;
+      left: $positionX;
+      top: $positionY;
+    }
+
+    .login-wrapper__content {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
