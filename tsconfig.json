@@ -21,5 +21,11 @@
     },
     "ignoreDeprecations": "5.0"
   },
-  "include": ["vite-helper/index.ts", "vite.config.ts", "vite-env.d.ts", "src/**/*"]
+  "include": [
+    "vite-helper/index.ts",
+    "vite.config.ts",
+    "vite-env.d.ts",
+    "src/**/*",
+    "./unplugin/**/*"
+  ]
 }

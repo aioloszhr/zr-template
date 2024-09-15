@@ -1,4 +1,3 @@
-import { defineComponent, computed } from 'vue'
 import './index.scss'
 
 import { completeSize, call } from '@/utils'

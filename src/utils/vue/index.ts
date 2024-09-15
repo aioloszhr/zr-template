@@ -1,3 +1,5 @@
 import { call } from './call'
+import { unrefElement } from './unref-element'
+import { effectDispose } from './effect-dispose'
 
-export { call }
+export { call, unrefElement, effectDispose }

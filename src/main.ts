@@ -3,6 +3,7 @@ import 'virtual:svg-icons-register' // vite-plugin-svg-icons 脚本，启用 svg
 import '@/styles/base.scss' // 初始化一些基础样式
 import App from './App'
 import { setupRouter } from './router'
+import { setupStore } from './store'
 
 import type { App as AppType } from 'vue'
 
@@ -15,7 +16,8 @@ import type { App as AppType } from 'vue'
  *
  * 注册时应该注意每个插件的加载顺序。
  */
-const setupPlugins = async (inst: AppType<Element>) => {
+const setupPlugins = (inst: AppType<Element>) => {
+  setupStore(inst)
   // 注册路由
   setupRouter(inst)
 }

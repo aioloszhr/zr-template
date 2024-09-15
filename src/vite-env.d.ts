@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 /// <reference types="vite-svg-loader" />
+/// <reference types="./types/global.d.ts" />
+/// <reference types="./types/app.d.ts" />
 
 /**
  *

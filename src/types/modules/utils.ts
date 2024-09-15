@@ -67,3 +67,11 @@ export type BasicTypes =
 export type AnyFC<P = any, R = any> = (...args: P[]) => R
 
 export type MaybeArray<T> = T | T[]
+
+export type StorageLike = 'sessionStorage' | 'localStorage'
+
+export interface StorageOptions<T = any> {
+  prefix?: boolean
+  prefixKey?: string
+  defaultValue?: T
+}
