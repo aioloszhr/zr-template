@@ -7,6 +7,6 @@ export default [
   {
     path: '/',
     name: 'ZRLogin',
-    component: () => import('@/views/login/index.vue')
+    component: () => import('@/views/login')
   }
 ]
