@@ -7,7 +7,7 @@
     "strict": true,
     "newLine": "LF",
     "jsx": "preserve",
-    "sourceMap": true,
+    "sourceMap": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -18,7 +18,8 @@
     "paths": {
       "@": ["src"],
       "@/*": ["src/*"]
-    }
+    },
+    "ignoreDeprecations": "5.0"
   },
   "include": ["vite-helper/index.ts", "vite.config.ts", "vite-env.d.ts", "src/**/*"]
 }

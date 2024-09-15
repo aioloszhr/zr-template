@@ -55,5 +55,8 @@ export default defineConfig({
        */
       scss: mixinCss(['./src/styles/mixins.scss', './src/styles/setting.scss'])
     }
+  },
+  build: {
+    sourcemap: false
   }
 })
