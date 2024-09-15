@@ -17,18 +17,8 @@
     "baseUrl": "./",
     "paths": {
       "@": ["src"],
-      "@/*": ["src/*"],
-      "@api": ["src/api"],
-      "@api/*": ["src/api/*"],
-      "@images": ["src/assets/images"],
-      "@images/*": ["src/assets/images"],
-      "@mock/*": ["mock/*"],
-      "@mock": ["mock/*"]
-    },
+      "@/*": ["src/*"]
+    }
   },
-  "include": [
-    "vite.config.ts",
-    "vite-env.d.ts",
-    "src/**/*",
-  ]
+  "include": ["vite.config.ts", "vite-env.d.ts", "src/**/*"]
 }
