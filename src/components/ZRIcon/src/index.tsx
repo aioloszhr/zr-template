@@ -43,7 +43,7 @@ export default defineComponent({
       >
         <svg
           {...({
-            RayIconAttribute: 'zr-icon',
+            ZrIconAttribute: 'zr-icon',
             ariaHidden: true
           } as object)}
         >

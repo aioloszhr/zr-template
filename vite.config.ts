@@ -30,7 +30,9 @@ export default defineConfig(({ mode }) => {
     },
     css: {
       preprocessorOptions: {
-        scss: mixinCSS
+        scss: {
+          additionalData: mixinCSS
+        }
       }
     },
     plugins: [

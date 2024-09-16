@@ -24,7 +24,7 @@ const setupPlugins = (inst: AppType<Element>) => {
 
 const setupTemplate = async () => {
   const app = createApp(App)
-  await setupPlugins(app)
+  setupPlugins(app)
   app.mount('#app')
 }
 

@@ -75,3 +75,21 @@ export interface StorageOptions<T = any> {
   prefixKey?: string
   defaultValue?: T
 }
+
+export type RemoveStorageKey =
+  | string
+  | '__all__'
+  | '__all_sessionStorage__'
+  | '__all_localStorage__'
+
+export type RemoveStorageFC = <T extends RemoveStorageKey>(
+  key: T,
+  storageType: T extends '__all__'
+    ? 'all'
+    : T extends '__all_sessionStorage__'
+      ? 'sessionStorage'
+      : T extends '__all_localStorage__'
+        ? 'localStorage'
+        : StorageLike,
+  options?: StorageOptions
+) => void

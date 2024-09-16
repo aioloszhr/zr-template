@@ -24,6 +24,47 @@ $positionY: 24px;
     .login-wrapper__content {
       width: 100%;
       height: 100%;
+
+      .n-grid {
+        height: 100%;
+      }
+
+      .login__left-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s var(--r-bezier);
+      }
+
+      .login__right-wrapper {
+        @include flexCenter;
+
+        .login__right-wrapper__content {
+          width: 50%;
+          background-color: transparent;
+        }
+      }
     }
+  }
+}
+
+.zr-template--light {
+  & .login__left-wrapper {
+    background-color: rgba(32, 128, 240, 0.22);
+  }
+
+  & .login__right-wrapper {
+    background-color: #ffffff;
+  }
+}
+
+.zr-template--dark {
+  & .login__left-wrapper {
+    background-color: #2c354b;
+  }
+
+  & .login__right-wrapper {
+    background-color: #2a3146;
   }
 }

@@ -16,9 +16,17 @@ export const useSettingGetters = () => {
    */
   const getPrimaryColorOverride = computed(() => variable.primaryColorOverride)
 
+  /**
+   *
+   * @description
+   * 获取 app 根路由。
+   */
+  const getAppRootRoute = computed(() => variable.appRootRoute)
+
   return {
     getAppTheme,
-    getPrimaryColorOverride
+    getPrimaryColorOverride,
+    getAppRootRoute
   }
 }
 

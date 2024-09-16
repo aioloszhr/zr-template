@@ -14,8 +14,10 @@ import type { App } from 'vue'
 
 // 该仓库导出，更多是为了 hooks 包中，在模板中尽量不直接操作 store 仓库
 export * from './modules/setting'
+export * from './modules/signing'
 // 导出 getters, actions
 export * from './hooks/useSettingStore'
+export * from './hooks/useSigningStore'
 
 /**
  *

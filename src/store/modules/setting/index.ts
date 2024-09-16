@@ -19,6 +19,10 @@ export const piniaSettingStore = defineStore(
           primaryColorHover: primaryColor,
           primaryColorPressed: primaryColor
         }
+      },
+      appRootRoute: {
+        name: 'Dashboard',
+        path: '/dashboard'
       }
     })
 

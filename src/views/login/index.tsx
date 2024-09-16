@@ -1,10 +1,11 @@
-import { NFlex, NGradientText, NDropdown } from 'naive-ui'
+import { NFlex, NGradientText, NDropdown, NGrid, NGridItem, NCard } from 'naive-ui'
+import Signing from './components/Signing'
+import ThemeSwitch from '@/components/ThemeSwitch'
 import { useWindowSize } from '@vueuse/core'
 import { ZRIcon } from '@/components'
 import { LOCAL_OPTIONS } from '@/app-config'
 
 import './index.scss'
-import ThemeSwitch from '@/components/ThemeSwitch'
 
 const Login = defineComponent({
   name: 'ZRLogin',
@@ -26,7 +27,7 @@ const Login = defineComponent({
             <NFlex align="center" class="login-title__wrapper">
               <ZRIcon name="zr" size="48" />
               <NGradientText class="login-title" type="info" size={28}>
-                Ray Template
+                ZR Template
               </NGradientText>
             </NFlex>
             <NFlex align="center" class="login-action__wrapper">
@@ -35,6 +36,21 @@ const Login = defineComponent({
                 <ZRIcon customClassName="login-icon" name="language" size="18" cursor="pointer" />
               </NDropdown>
             </NFlex>
+            <NGrid cols={'s:1 m:1 l:2 xl:2 2xl:2'} itemResponsive={false} responsive="screen">
+              <NGridItem span={'s:0 m:0 l:1 xl:1 2xl:1'} class="login__left-wrapper">
+                <NFlex align="center" vertical>
+                  <ZRIcon name="login_bg" width="368" height="368" />
+                  <NGradientText class="login-title" type="info" size={36}>
+                    开箱即用的中后台管理系统
+                  </NGradientText>
+                </NFlex>
+              </NGridItem>
+              <NGridItem span={1} class="login__right-wrapper">
+                <NCard class="login__right-wrapper__content" embedded bordered={false}>
+                  <Signing />
+                </NCard>
+              </NGridItem>
+            </NGrid>
           </div>
         </div>
       </div>
