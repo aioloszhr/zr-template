@@ -2,6 +2,7 @@ import { watchOnce } from '@vueuse/core'
 import { APP_THEME, APP_CATCH_KEY } from '@/app-config'
 
 import type { SettingState } from './type'
+import type { AnyFC } from '@/types'
 
 export const piniaSettingStore = defineStore(
   'setting',
@@ -20,6 +21,35 @@ export const piniaSettingStore = defineStore(
         }
       }
     })
+
+    /**
+     *
+     * @param key settingState 的 key
+     * @param value settingState 的 value
+     * @param cb 回调函数
+     *
+     * 更新 settingState 的值，如果 key 不存在于 settingState 中，则不会更新
+     * 但是不论是否更新成功，都会执行回调函数
+     *
+     * @example
+     * updateSettingState('drawerPlacement', 'left')
+     * updateSettingState('appTheme', true)
+     */
+    const updateSettingState = <
+      T extends keyof SettingState,
+      V extends typeof settingState,
+      C extends AnyFC
+    >(
+      key: T,
+      value: V[T],
+      cb?: C
+    ) => {
+      if (Object.hasOwn(settingState, key)) {
+        settingState[key] = value
+      }
+
+      cb?.()
+    }
 
     /**
      *
@@ -49,7 +79,8 @@ export const piniaSettingStore = defineStore(
     )
 
     return {
-      ...toRefs(settingState)
+      ...toRefs(settingState),
+      updateSettingState
     }
   },
   {

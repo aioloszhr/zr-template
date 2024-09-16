@@ -4,6 +4,7 @@ import { ZRIcon } from '@/components'
 import { LOCAL_OPTIONS } from '@/app-config'
 
 import './index.scss'
+import ThemeSwitch from '@/components/ThemeSwitch'
 
 const Login = defineComponent({
   name: 'ZRLogin',
@@ -29,6 +30,7 @@ const Login = defineComponent({
               </NGradientText>
             </NFlex>
             <NFlex align="center" class="login-action__wrapper">
+              <ThemeSwitch />
               <NDropdown options={LOCAL_OPTIONS} trigger="click">
                 <ZRIcon customClassName="login-icon" name="language" size="18" cursor="pointer" />
               </NDropdown>

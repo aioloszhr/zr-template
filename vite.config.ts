@@ -61,10 +61,13 @@ export default defineConfig(({ mode }) => {
         // resolvers: [NaiveUiResolver()],
       }),
       eslintPlugin({
-        include: ['src/**/*.js', 'src/**/*.tsx', 'src/**/*.ts'], // 指定需要检查的文件
-        exclude: ['node_modules/**', 'dist/**'], // 指定不需要检查的文件
+        include: ['src/**/*.{vue,js,jsx,ts,tsx}'], // 指定需要检查的文件
+        exclude: ['**/node_modules/**', 'dist/**', 'vite-env.d.ts', '*.md'], // 指定不需要检查的文件
         fix: true, // 是否自动修复
-        cache: false // 是否启用缓存
+        cache: false, // 是否启用缓存
+        lintOnStart: true,
+        failOnError: true,
+        failOnWarning: true
       })
     ]
   }

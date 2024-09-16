@@ -22,4 +22,7 @@ export const useSettingGetters = () => {
   }
 }
 
-export const useSettingActions = () => {}
+export const useSettingActions = () => {
+  const { updateSettingState } = piniaSettingStore()
+  return { updateSettingState }
+}
