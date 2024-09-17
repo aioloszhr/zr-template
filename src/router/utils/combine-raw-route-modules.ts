@@ -1,4 +1,4 @@
-import type { RouteModules, AppRouteRecordRaw } from '@/router/types'
+import type { AppRouteRecordRaw, RouteModules } from '@/router/types'
 
 /**
  *
@@ -13,7 +13,6 @@ import type { RouteModules, AppRouteRecordRaw } from '@/router/types'
  *
  * 如果组件的 name 属性出现重复或者冲突，会导致一些意想不到的情况。
  */
-
 export const combineRawRouteModules = () => {
   const modulesFiles: RouteModules = import.meta.glob('@/router/modules/**/*.ts', {
     eager: true

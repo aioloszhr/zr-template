@@ -1,3 +1,5 @@
+import { NLayout } from 'naive-ui'
+import Menu from './components/Menu'
 /**
  *
  * 页面布局入口文件
@@ -13,6 +15,10 @@ export default defineComponent({
   name: 'ZRLayout',
   setup() {},
   render() {
-    return 123
+    return (
+      <NLayout class="z-layout-full" hasSider embedded>
+        <Menu />
+      </NLayout>
+    )
   }
 })

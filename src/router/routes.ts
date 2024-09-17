@@ -1,5 +1,4 @@
 import Layout from '@/layout'
-import { appExpandRoutes } from './app-route-modules'
 
 export default [
   /**
@@ -13,30 +12,29 @@ export default [
     component: () => import('@/views/login')
   },
   /**
-   *
    * App Layout 核心页面（一般为登陆后展示的页面）
    */
   {
     path: '/',
     name: 'ZRLayout',
     component: Layout,
+    // 暂时写死，后面优化为动态路由方式
     children: [
-      ...appExpandRoutes()
-      /**
-       *
-       * @description
-       * 404 页面一定要放在最后面，避免奇奇怪怪的问题。
-       */
-      // {
-      //   path: '/:catchAll(.*)',
-      //   component: () => import('@/views/error/views/Error404'),
-      //   meta: {
-      //     i18nKey: t('menu.Error'),
-      //     icon: 'error',
-      //     hidden: true,
-      //     sameLevel: true,
-      //   },
-      // },
+      {
+        path: '/dashboard',
+        component: () => import('@/views/dashboard'),
+        meta: {
+          i18nKey: '首页',
+          icon: 'dashboard',
+          order: 0
+        }
+      }
     ]
+  },
+  {
+    // 将匹配所有内容并将其放在 `route.params.pathMatch` 下
+    path: '/:pathMatch(.*)',
+    name: 'NotFound',
+    component: () => import('@/views/error')
   }
 ]

@@ -1,0 +1,75 @@
+import { piniaMenuStore } from '../modules/menu'
+import { useAppRoot } from '@/hooks'
+
+export const useMenuGetters = () => {
+  const variable = piniaMenuStore()
+
+  /**
+   *
+   * @remark 获取菜单列表
+   */
+  const getMenuOptions = computed(() => variable.options)
+  /**
+   *
+   * @remark 获取面包屑列表
+   */
+  const getBreadcrumbOptions = computed(() => variable.breadcrumbOptions)
+  /**
+   *
+   * @remark 获取菜单当前 key
+   */
+  const getMenuKey = computed(() => variable.menuKey)
+  /**
+   *
+   * @remark 获取菜单标签列表
+   */
+  const getMenuTagOptions = computed(() => {
+    const { getRootPath } = useAppRoot()
+
+    return variable.menuTagOptions.map((curr, _idx, currentArray) => {
+      if (curr.key === getMenuKey.value && curr.key !== getRootPath.value) {
+        curr.closeable = true
+      } else {
+        curr.closeable = false
+      }
+
+      if (curr.key === getRootPath.value) {
+        curr.closeable = false
+      }
+
+      if (currentArray.length <= 1) {
+        curr.closeable = false
+      }
+
+      return curr
+    })
+  })
+  /**
+   *
+   * @remark 获取当前菜单项
+   */
+  const getCurrentMenuOption = computed(() => variable.currentMenuOption)
+  /**
+   *
+   * @remark 获取是否折叠
+   */
+  const getCollapsed = computed(() => variable.collapsed)
+
+  return {
+    getMenuOptions,
+    getBreadcrumbOptions,
+    getMenuKey,
+    getMenuTagOptions,
+    getCurrentMenuOption,
+    getCollapsed
+  }
+}
+
+export const useMenuActions = () => {
+  const { changeMenuModelValue, resolveOption } = piniaMenuStore()
+
+  return {
+    changeMenuModelValue,
+    resolveOption
+  }
+}

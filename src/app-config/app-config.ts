@@ -1,4 +1,4 @@
-import type { PreloadingConfig } from '@/types'
+import type { PreloadingConfig, AppMenuConfig, AppKeepAlive } from '@/types'
 
 /**
  *
@@ -56,3 +56,39 @@ export const APP_CATCH_KEY = {
   isAppLockScreen: 'isAppLockScreen',
   appGlobalSearchOptions: 'appGlobalSearchOptions'
 } as const
+
+/**
+ *
+ * 系统缓存
+ *
+ * 说明:
+ *   - setupKeepAlive: 是否启用系统页面缓存, 设置为 false 则关闭系统页面缓存
+ *   - keepAliveExclude: 排除哪些页面不缓存
+ *   - maxKeepAliveLength: 最大缓存页面数量
+ */
+export const APP_KEEP_ALIVE: Readonly<AppKeepAlive> = {
+  setupKeepAlive: true,
+  keepAliveExclude: [],
+  maxKeepAliveLength: 5
+}
+
+/**
+ *
+ * 系统菜单折叠配置
+ *
+ * menuCollapsedWidth 配置仅当 menuCollapsedMode 为 width 风格时才有效
+ *
+ * menuCollapsedMode:
+ *   - transform: 边栏将只会移动它的位置而不会改变宽度
+ *   - width: Sider 的内容宽度将会被实际改变
+ * menuCollapsedIconSize 配置菜单未折叠时图标的大小
+ * menuCollapsedIndent 配置菜单每级的缩进
+ * menuAccordion 手风琴模式
+ */
+export const APP_MENU_CONFIG: Readonly<AppMenuConfig> = {
+  menuCollapsedWidth: 64,
+  menuCollapsedMode: 'width',
+  menuCollapsedIconSize: 22,
+  menuCollapsedIndent: 24,
+  menuAccordion: false
+}

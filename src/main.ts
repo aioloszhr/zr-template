@@ -16,7 +16,7 @@ import type { App as AppType } from 'vue'
  *
  * 注册时应该注意每个插件的加载顺序。
  */
-const setupPlugins = (inst: AppType<Element>) => {
+const setupPlugins = async (inst: AppType<Element>) => {
   setupStore(inst)
   // 注册路由
   setupRouter(inst)
@@ -24,7 +24,7 @@ const setupPlugins = (inst: AppType<Element>) => {
 
 const setupTemplate = async () => {
   const app = createApp(App)
-  setupPlugins(app)
+  await setupPlugins(app)
   app.mount('#app')
 }
 
